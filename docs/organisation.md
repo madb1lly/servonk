@@ -8,7 +8,7 @@ Contains the current version of the Rust toolchain which is used by Servo. This 
 ### [bootstrap.sh](../bootstrap.sh)
 This checks the current version of the [rust-toolchain](../rust-toolchain), installs the rust toolchain for your current platform and the target armv7-linux-androideabi using the current version and sets the override so that within the Servonk directory it will use this installed version of the toolchain for work on Servonk. This will only work if you have already installed [rustup](https://github.com/rust-lang-nursery/rustup.rs), which is part of the dependencies for Servo (and therefore Servonk) as described [here](../README.md#setting-up-your-environment).
 
-[Bindgen](../rust-bindgen) is needed to generate Rust FFI bindings to the [mtdev C library](../platform/gonk/mtdev/mtdev-1.1.5). "command -v bindgen >/dev/null 2>&1 || { etc..." checks if bindgen exists and if not it installs it with "cargo install -f bindgen".
+[Bindgen](https://github.com/rust-lang-nursery/rust-bindgen) is needed to generate Rust FFI bindings to the [mtdev C library](../platform/gonk/mtdev/mtdev-1.1.5). "command -v bindgen >/dev/null 2>&1 || { etc..." checks if bindgen exists and if not it installs it with "cargo install -f bindgen".
 
 ### [servonk](../servonk)
 This is the main script for interfacing with Servonk. It's parameters are the functions you wish to perform, on which platform and with which options. The functions call other scripts in the [/platform](../platform) for the specified platform, e.g. [/platform/gonk/support/scripts](../platform/gonk/support/scripts) for Gonk.
@@ -20,7 +20,7 @@ Functions:
 * _clean_ the Servonk build files for the specified platform.
 * _flash_ Servonk to the specified platform (not for Glutin)
 * _frontend_ which only flashes the frontend of Servonk, it does not update the rest (not for Glutin)
-* _package_ the built Servonk runtimes for distribution, e.g. as a [release](../releases)
+* _package_ the built Servonk runtimes for distribution, e.g. as a [release](https://github.com/fabricedesre/servonk/releases)
 * _run_ Servonk for the specified platform
 
 Supported platforms:
